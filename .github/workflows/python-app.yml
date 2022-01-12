@@ -31,8 +31,5 @@ jobs:
       env:
           username:   ${{ secrets.USERNAME }}
           password:   ${{ secrets.PASSWORD }}
-          province:   ${{ secrets.PROVINCE }}
-          city:       ${{ secrets.CITY }}
-          county:     ${{ secrets.COUNTY }}
       run: |
-        python clock_in.py --username=$username --password=$password --province=$province --city=$city --county=$county
+        python clock_in.py $username $password
