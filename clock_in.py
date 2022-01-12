@@ -73,8 +73,8 @@ def main():
     print(json.loads(clockin.text)['msg'])
     return isSucccess
 if __name__ == '__main__':
-    username = "201911020127"
-    password = "O9660Oliang"
+    username = "梁原韶"
+    password = "哈哈哈"
     if sys.argv[1]:
         username = sys.argv[1]
     if sys.argv[2]:
