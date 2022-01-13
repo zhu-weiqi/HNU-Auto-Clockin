@@ -4,6 +4,8 @@ HNU疫情防控和健康监测系统每日自动打卡
 
 **2021.6.4 更新：使用百度云公开OCRapi，不再需要百度账号，此处感谢GGP老哥的提醒，[这个是他打卡脚本的链接](https://github.com/ercha-action/HNU-AutoClockIn)。**
 
+**2022.1.12 更新：还是需要百度云自身的OCRapi，公开的api已经不能使用。精简了代码，不需要设置打卡地址，默认为湖南省长沙市岳麓区，详细地址为宿舍**
+
 之前使用本脚本的同学请在fetch and merge之后进入Secrets删除用于配置验证码识别的3个id即可（不删也行）。
 
 
@@ -23,11 +25,8 @@ HNU疫情防控和健康监测系统每日自动打卡
     进入刚刚你fork过去到自己名下的项目，再进入Settings -> Secrets页面，点击New repository Secret，在Name栏输入**USERNAME**，Value栏输入你的学号。然后再添加一个Secret，Name栏为**PASSWORD**，Value栏填写你登录个人中心的密码。
     ![QQ20210316-2.png](https://i.loli.net/2021/03/16/4vqF6bsBPfSUDZc.png)
 
-3. **填写打卡地址**
 
-    你还需要分别以**PROVINCE**, **CITY**, **COUNTY**为NAME添加相应的Secret，Value中请注意须在地名后面添加“省“、”市“、”县/区“，如”湖南省“、”长沙市“、”岳麓区“。另外，详细地址默认为一个句号，你可以在源代码（clock_in.py）中修改。
-
-4. **开始自动化运行**
+3. **开始自动化运行**
 
     进入到**Actions**界面，点击该工作流，然后Run workflow，即可开启自动化运行，你可以在设置里绑定邮箱以接收运行失败的通知，防止未来哪天打卡系统升级了你还蒙在鼓里。
     ![Snipaste_2021-03-15_21-56-15.png](https://i.loli.net/2021/03/16/oxSp8VYlfskWq53.png)
