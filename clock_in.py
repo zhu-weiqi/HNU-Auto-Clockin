@@ -3,7 +3,6 @@ import sys
 import requests
 import json
 import re
-
 def captchaOCR():
     captcha = ''
     token = ''
@@ -15,7 +14,9 @@ def captchaOCR():
             "detect_direction":"false"
         }
         headers[b'Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-        response=requests.post("https://aip.baidubce.com/rest/2.0/ocr/v1/webimage?access_token=24.c03a57cc9fb60078a57a08528d8148a9.2592000.1644575167.282335-25504018",headers=headers,data=data)
+        resp=requests.post("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=HqsxVsWLZny091CfG2k8EMlM&client_secret=rpIhqY1iKulct7BYxxeHbpcoUKS4bNv7")
+        access_token=resp.json()['access_token']
+        response=requests.post(f"https://aip.baidubce.com/rest/2.0/ocr/v1/webimage?access_token={access_token}",headers=headers,data=data)
         print(response.json())
         captcha=response.json()['words_result'][0]['words']
     return token, captcha
