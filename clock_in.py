@@ -46,8 +46,6 @@ def main():
         "RealCounty":"弋江区",
         "RealAddress":"文昌西路15号",
         "BackState":1,
-        "MorningTemp":"36.5",
-        "NightTemp":"36.5",
         "tripinfolist":[],
         "QRCodeColor":"绿色"
     }
