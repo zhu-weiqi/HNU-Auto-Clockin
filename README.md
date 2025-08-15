@@ -1,4 +1,4 @@
-# HNU-Auto-Clockin（目前可用）
+# HNU-Auto-Clockin（目前不可用）
 
 HNU疫情防控和健康监测系统每日自动打卡
 
